@@ -1,5 +1,8 @@
 <div class="container">
   <%= render @restaurant %>
 </div>
-<p>Read reviews</p>
-<p>back to home</p>
+<div class="container">
+  <%= link_to "Return to view all restaurants", restaurants_path, class: "btn btn-primary" %>
+</div>
+<%= render @restaurant.reviews %>
+<%= render "restaurants/new_review", restaurant: @restaurant, review: @review %>

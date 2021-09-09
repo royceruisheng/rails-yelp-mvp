@@ -1,5 +1,5 @@
-<div class="card col-4">
-  <h1><%= restaurant.name %></h1>
+<div class="card col-6">
+  <h1><%= link_to "#{restaurant.name}", restaurant_path(restaurant) %></h1>
     <div>
       <p><i>Category: <%= restaurant.category %></i></p>
     </div>

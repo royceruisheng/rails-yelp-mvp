@@ -4,7 +4,8 @@
     <%= f.input :name %>
     <%= f.input :address %>
     <%= f.input :phone_number %>
-    <%= f.input :category %>
+    <%= f.input :category, collection: ["chinese", "italian", "japanese", "french", "belgian"] %>
     <%= f.button :submit, class: "btn btn-primary" %>
   <% end %>
+  <%= link_to "Return to view all restaurants", restaurants_path %>
 </div>

@@ -6,6 +6,7 @@ class RestaurantsController < ApplicationController
   end
 
   def show
+    @review = Review.new
   end
 
   def new
@@ -13,9 +14,11 @@ class RestaurantsController < ApplicationController
   end
 
   def create
-    if Restaurant.create(restaurant_params)
-      raise
-      redirect_to restaurants_path
+    @restaurant = Restaurant.create(restaurant_params)
+    @restaurant.save
+
+    if @restaurant.save
+      redirect_to restaurant_path(@restaurant)
     else
       render :new
     end
